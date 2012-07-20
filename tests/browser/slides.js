@@ -5,7 +5,7 @@ var should = chai.Should();
  *
  * A Slide defines the structure of a single slide
  */
-describe('Slide', function(){
+describe('Slide Model', function(){
 
     var slide = null;
 
@@ -76,7 +76,7 @@ describe('Slide', function(){
  *
  * A collection holds multiple slide models
  */
-describe('Slides', function() {
+describe('Slide Collection', function() {
 
     var slides = null
 
