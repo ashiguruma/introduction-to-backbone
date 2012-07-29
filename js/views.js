@@ -76,10 +76,34 @@ var Views = (function() {
     
     });
 
+    var SlideForm = Backbone.View.extend({
+
+        events: {
+            'submit': 'add'
+        },
+
+        initialize: function() {
+
+        },
+
+        add: function() {
+
+            app.collections.slides.add({
+                title: this.$('#title').val(),
+                content: this.$('#content').val()
+            })
+
+            return false;
+
+        }
+
+    });
+
     return {
         Application: Application,
         Slides: Slides,
-        Slide: Slide
+        Slide: Slide,
+        SlideForm: SlideForm
     }
 
 })();

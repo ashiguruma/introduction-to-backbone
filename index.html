@@ -25,6 +25,24 @@
                 <p><%= content %>
             </script>
 
+            <form id="slide-form" method="post" action="#">
+
+                <h3>Add another slide</h3>
+
+                <p>
+                    <label for="title">Title</label>
+                    <input id="title" type="text" name="title" placeholder="Untitled Slide">
+                </p>
+
+                <p>
+                    <label for="title">Content</label>
+                    <textarea id="content" placeholder="Lorem ipsum ..." resizable></textarea>
+                </p>
+
+                <button id="save" class="btn">Save</button>
+
+            </form>
+
         </div>
 
         <script src="js/models.js" type="text/javascript"></script>
@@ -44,6 +62,8 @@
 
         app.views.slides = new Views.Slides({ el: '#slides', collection: app.collections.slides });
         app.views.slides.renderAll();
+
+        app.views.slideForm = new Views.SlideForm({ el: '#slide-form' })
 
         </script>
 
