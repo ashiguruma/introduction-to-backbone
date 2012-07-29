@@ -8,19 +8,47 @@ var Views = (function() {
 
     var Slides = Backbone.View.extend({
 
-        render: function() {
+        initialize: function() {
+
+            this.collection.on('add', this.renderOne, this);
+
+        },
+
+        addAll: function() {
+
             var self = this;
 
             // Collect a slide view for each slide in the collection
-            var slides = this.collection.map(function(slide) {
+            return this.collection.map(function(model) {
 
                 // Create a new view for the slide and return it's element
-                return new Views.Slide({ model: slide }).render().el;
+                return self.addOne(model);
 
             });
 
+        },
+
+        addOne: function (model) {
+
+            // Create a new view for the slide and return it's element
+            return new Views.Slide({ model: model }).render().el;
+
+        },
+
+        renderAll: function() {
+
             // Add the slides elements to the slides list element
-            self.$el.append(slides);
+            this.$el.append(this.addAll());
+
+            return this;
+
+        },
+
+        renderOne: function(model) {
+
+            this.$el.append(this.addOne(model));
+
+            return this;
 
         }
 
