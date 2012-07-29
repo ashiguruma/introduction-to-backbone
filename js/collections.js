@@ -6,7 +6,7 @@ var Collections = (function() {
         initialize: function() {
         
         }
-    
+
     });
 
     return {
