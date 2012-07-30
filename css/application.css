@@ -1,0 +1,12 @@
+ul#slides li div.view {
+    display: block;
+}
+ul#slides li.editing div.view {
+    display: none;
+}
+ul#slides li div.edit {
+    display: none;
+}
+ul#slides li.editing div.edit {
+    display: block;
+}

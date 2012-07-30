@@ -59,6 +59,11 @@ var Views = (function() {
         tagName: 'li',
         template: _.template($('#slide-template').html()),
 
+        events: {
+            'dblclick .view': 'edit',
+            'click .done': 'close'
+        },
+
         initialize: function() {
 
             this.model.on('change', this.render, this);
@@ -72,11 +77,34 @@ var Views = (function() {
 
             return this;
 
+        },
+
+        edit: function() {
+
+            this.$el.addClass('editing');
+
+            this.$('input').focus();
+
+            return this;
+
+        },
+
+        close: function() {
+
+            this.model.set({
+                title: this.$('input').val(),
+                content: this.$('textarea').val()
+            });
+
+            this.$el.removeClass('editing');
+
+            return this;
+
         }
     
     });
 
-    var SlideForm = Backbone.View.extend({
+    var AddSlideForm = Backbone.View.extend({
 
         events: {
             'submit': 'add'
@@ -103,7 +131,7 @@ var Views = (function() {
         Application: Application,
         Slides: Slides,
         Slide: Slide,
-        SlideForm: SlideForm
+        AddSlideForm: AddSlideForm
     }
 
 })();
