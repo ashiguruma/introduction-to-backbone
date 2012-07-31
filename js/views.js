@@ -107,10 +107,26 @@ var Views = (function() {
     var AddSlideForm = Backbone.View.extend({
 
         events: {
-            'submit': 'add'
+            'click .add-slide': 'show',
+            'submit': 'add',
+            'click .cancel': 'cancel'
         },
 
         initialize: function() {
+
+            this.$('form').hide();
+
+        },
+
+        show: function() {
+
+            this.$('form').slideDown();
+
+        },
+
+        hide: function() {
+
+            this.$('form').slideUp();
 
         },
 
@@ -121,7 +137,19 @@ var Views = (function() {
                 content: this.$('#content').val()
             })
 
+            this.hide();
+            this.$('form')[0].reset();
+
             return false;
+
+        },
+
+        cancel: function() {
+
+            this.hide();
+            this.$('form')[0].reset();
+
+            return this;
 
         }
 

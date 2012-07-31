@@ -1,3 +1,5 @@
+/* @group Slide state */
+
 ul#slides li div.view {
     display: block;
 }
@@ -9,4 +11,10 @@ ul#slides li div.edit {
 }
 ul#slides li.editing div.edit {
     display: block;
+}
+
+/* @end */
+
+#add-slide form {
+/*    display: none;*/
 }
