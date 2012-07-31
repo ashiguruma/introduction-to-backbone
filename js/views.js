@@ -57,10 +57,11 @@ var Views = (function() {
     var Slide = Backbone.View.extend({
 
         tagName: 'li',
+        className: 'slide',
         template: _.template($('#slide-template').html()),
 
         events: {
-            'dblclick .view': 'edit',
+            'dblclick': 'edit',
             'click .done': 'close'
         },
 
@@ -80,6 +81,8 @@ var Views = (function() {
         },
 
         edit: function() {
+
+            if (this.$el.hasClass('editing')) return false;
 
             this.$el.addClass('editing');
 
@@ -107,26 +110,12 @@ var Views = (function() {
     var AddSlideForm = Backbone.View.extend({
 
         events: {
-            'click .add-slide': 'show',
-            'submit': 'add',
-            'click .cancel': 'cancel'
+            'submit': 'add'
         },
 
         initialize: function() {
 
-            this.$('form').hide();
-
-        },
-
-        show: function() {
-
-            this.$('form').slideDown();
-
-        },
-
-        hide: function() {
-
-            this.$('form').slideUp();
+            
 
         },
 
@@ -135,21 +124,11 @@ var Views = (function() {
             app.collections.slides.add({
                 title: this.$('#title').val(),
                 content: this.$('#content').val()
-            })
+            });
 
-            this.hide();
-            this.$('form')[0].reset();
+            this.el.reset();
 
             return false;
-
-        },
-
-        cancel: function() {
-
-            this.hide();
-            this.$('form')[0].reset();
-
-            return this;
 
         }
 

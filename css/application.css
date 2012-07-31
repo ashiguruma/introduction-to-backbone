@@ -1,4 +1,59 @@
-/* @group Slide state */
+/* @group Slides Display */
+
+.slide {
+    width: 20%;
+    min-height: 180px;
+    padding: 0.5% 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.slide:hover {
+    cursor: pointer;
+    -moz-box-shadow: 0 0 6px rgba(134, 124, 255, 0.68);
+    -webkit-box-shadow: 0 0 6px rgba(134, 124, 255, 0.68);
+    box-shadow: 0 0 6px rgba(134, 124, 255, 0.68);
+}
+.slide h2 {
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+/* @end */
+
+/* @group Slide List */
+
+ul#slides {
+    float: left;
+    list-style: none;
+    margin-right: -1.5%;
+    margin-left: -1.5%;
+}
+ul#slides .slide {
+    float: left;
+    margin-left: 1.56%;
+    margin-right: 1.56%;
+}
+
+/* @end */
+
+/* @group Slide Form */
+
+form.slide {
+    clear: left;
+}
+form.slide {
+    width: 20.7%;
+}
+
+/* @end */
+
+/* @group Slide Editing */
 
 ul#slides li div.view {
     display: block;
@@ -15,6 +70,3 @@ ul#slides li.editing div.edit {
 
 /* @end */
 
-#add-slide form {
-/*    display: none;*/
-}

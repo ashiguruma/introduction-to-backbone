@@ -18,13 +18,15 @@
 
         <div class="container">
 
-            <h1>Introduction to Backbone</h1>
+            <div class="page-header">
+                <h1>Slideshow One</h1>
+            </div>
 
             <ul id="slides">
             </ul>
             <script type="text/html" id="slide-template">
                 <div class="view">
-                    <h3><%= title %></h3>
+                    <h2><%= title %></h2>
                     <p><%= content %></p>
                 </div>
                 <div class="edit">
@@ -34,15 +36,11 @@
                 </div>
             </script>
 
-            <div id="add-slide">
-                <button class="add-slide btn">Add a slide</button>
-                <form method="post" action="#">
-                    <p><label for="title">Title</label><input id="title" type="text" name="title" placeholder="Untitled Slide"></p>
-                    <p><label for="title">Content</label><textarea id="content" placeholder="Lorem ipsum ..."></textarea></p>
-                    <button type="submit" class="add btn btn-primary">Add</button>
-                    <button type="button" class="cancel btn">Cancel</button>
-                </form>
-            </div>
+            <form id="add-slide" class="slide" method="post" action="#">
+                <p><input id="title" type="text" name="title" placeholder="Untitled Slide"></p>
+                <p><textarea id="content" placeholder="Lorem ipsum ..."></textarea></p>
+                <button type="submit" class="add btn btn-primary">Add</button>
+            </form>
 
             <div id="statistics">
             </div>
