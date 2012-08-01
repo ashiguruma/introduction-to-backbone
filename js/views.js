@@ -2,7 +2,13 @@ var Views = (function() {
 
     var Application = Backbone.View.extend({
 
-        
+        statsTemplate: _.template($('#stats-template').html()),
+
+        initialize: function () {
+
+            this.$('#stats').html(this.statsTemplate({ count: app.collections.slides.length }));
+
+        }
 
     });
 

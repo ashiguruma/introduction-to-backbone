@@ -25,7 +25,7 @@ var Models = (function() {
             this.set({active: false});
 
         }
-    
+
     });
 
     return {

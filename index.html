@@ -20,6 +20,12 @@
 
             <div class="page-header">
                 <h1>Slideshow One</h1>
+
+                <div id="stats">
+                </div>
+                <script type="text/html" id="stats-template">
+                    <i class="icon-th-large"></i> <%= count %> slides
+                </script>
             </div>
 
             <ul id="slides">
@@ -41,9 +47,6 @@
                 <p><textarea id="content" placeholder="Lorem ipsum ..."></textarea></p>
                 <button type="submit" class="add btn btn-primary">Add</button>
             </form>
-
-            <div id="statistics">
-            </div>
 
         </div>
 

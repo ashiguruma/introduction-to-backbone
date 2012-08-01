@@ -1,3 +1,7 @@
+#stats {
+    float: right;
+}
+
 /* @group Slides Display */
 
 .slide {
@@ -22,6 +26,9 @@
 .slide h2 {
     font-weight: 100;
     margin-bottom: 10px;
+}
+.slide input, .slide textarea {
+    width: 94%;
 }
 
 /* @end */
@@ -49,6 +56,9 @@ form.slide {
 }
 form.slide {
     width: 20.7%;
+}
+form.slide textarea {
+    height: 60px;
 }
 
 /* @end */
