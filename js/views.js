@@ -27,7 +27,7 @@ var Views = (function() {
         initialize: function() {
 
             this.collection.on('add', this.renderOne, this);
-            this.collection.on('add', function() {
+            this.collection.on('add destroy', function() {
                 $('#stats').trigger('updateStats');
             });
 
