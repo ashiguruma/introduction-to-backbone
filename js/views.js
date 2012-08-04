@@ -4,7 +4,17 @@ var Views = (function() {
 
         statsTemplate: _.template($('#stats-template').html()),
 
+        events: {
+            'updateStats': 'updateStats'
+        },
+
         initialize: function () {
+
+            this.updateStats();
+
+        },
+
+        updateStats: function() {
 
             this.$('#stats').html(this.statsTemplate({ count: app.collections.slides.length }));
 
@@ -17,6 +27,9 @@ var Views = (function() {
         initialize: function() {
 
             this.collection.on('add', this.renderOne, this);
+            this.collection.on('add', function() {
+                $('#stats').trigger('updateStats');
+            });
 
         },
 
@@ -117,12 +130,6 @@ var Views = (function() {
 
         events: {
             'submit': 'add'
-        },
-
-        initialize: function() {
-
-            
-
         },
 
         add: function() {
