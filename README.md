@@ -1,7 +1,7 @@
 Introduction to Backbone.js
 ===========================
 
-A presentation on the basics of Backbone.js.
+A presentation on the basics of [Backbone.js](http://backbonejs.org).
 
 The best place to start is the slides, then the code, or just the code.
 
